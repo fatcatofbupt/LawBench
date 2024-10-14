@@ -36,6 +36,11 @@ def compute_ie_f1(hyps, refs, entity_types):
     assert (len(hyps) == len(refs))
     scores, abstentions = 0, 0
     for h, r in zip(hyps, refs):
+        # print(f"h:{h}, r:{r}")
+        # print("+++" * 40)
+        if r is None:
+            print(f"got None ref:{r}")
+            # r= ""
         h = __extract_entities_pred(h, entity_types)
         r = __extract_entities_ref(r)
         if r == {}:

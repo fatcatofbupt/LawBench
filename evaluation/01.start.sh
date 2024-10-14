@@ -1,0 +1,1 @@
+python main.py -i  ./F -o  ./results.csv

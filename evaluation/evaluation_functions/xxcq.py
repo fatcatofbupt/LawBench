@@ -12,6 +12,7 @@ def compute_xxcq(data_dict):
         question, prediction, answer = example["origin_prompt"], example["prediction"], example["refr"]
         predictions.append(prediction)
         references.append(answer)
-
+    # print(f"predictions:{predictions}")
+    # print(f"predictions:{answer}")
     return compute_ie_f1(predictions, references, {"犯罪嫌疑人", "受害人", "被盗货币", "物品价值", "盗窃获利",
                                                    "被盗物品", "作案工具", "时间", "地点", "组织机构"})
